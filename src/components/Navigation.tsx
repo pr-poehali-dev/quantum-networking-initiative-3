@@ -8,22 +8,22 @@ interface NavigationProps {
 
 const translations = {
   en: {
-    biography: "Biography",
-    concerts: "Concerts",
+    about: "About",
+    products: "Products",
     gallery: "Gallery",
     contact: "Contact",
   },
   de: {
-    biography: "Biographie",
-    concerts: "Konzerte",
+    about: "Über uns",
+    products: "Produkte",
     gallery: "Galerie",
     contact: "Kontakt",
   },
   ru: {
-    biography: "Биография",
-    concerts: "Концерты",
-    gallery: "Галерея",
-    contact: "Контакт",
+    about: "О компании",
+    products: "Продукция",
+    gallery: "Производство",
+    contact: "Контакты",
   },
 }
 
@@ -46,7 +46,7 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
   }, [])
 
   const navLinkColor = isHeroSection ? "text-white" : "text-charcoal"
-  const navLinkHoverColor = isHeroSection ? "hover:text-gold" : "hover:text-gold"
+  const navLinkHoverColor = "hover:text-gold"
   const logoColor = isHeroSection ? "text-white" : "text-charcoal"
   const menuButtonColor = isHeroSection ? "text-white" : "text-charcoal"
   const languageButtonActiveColor = "text-gold"
@@ -66,7 +66,7 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className={`${logoColor} font-serif text-2xl font-normal tracking-wide transition-colors duration-300`}>
-            A. Voss
+            Фольманн
           </div>
 
           {/* Desktop Menu */}
@@ -75,13 +75,13 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
               href="#biography"
               className={`text-sm ${navLinkColor} ${navLinkHoverColor} transition-colors duration-300`}
             >
-              {t.biography}
+              {t.about}
             </a>
             <a
               href="#concerts"
               className={`text-sm ${navLinkColor} ${navLinkHoverColor} transition-colors duration-300`}
             >
-              {t.concerts}
+              {t.products}
             </a>
             <a
               href="#gallery"
@@ -131,24 +131,28 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
             <a
               href="#biography"
               className={`block text-sm ${mobileLinkColor} hover:text-gold transition-colors duration-300 py-2`}
+              onClick={() => setIsOpen(false)}
             >
-              {t.biography}
+              {t.about}
             </a>
             <a
               href="#concerts"
               className={`block text-sm ${mobileLinkColor} hover:text-gold transition-colors duration-300 py-2`}
+              onClick={() => setIsOpen(false)}
             >
-              {t.concerts}
+              {t.products}
             </a>
             <a
               href="#gallery"
               className={`block text-sm ${mobileLinkColor} hover:text-gold transition-colors duration-300 py-2`}
+              onClick={() => setIsOpen(false)}
             >
               {t.gallery}
             </a>
             <a
               href="#contact"
               className={`block text-sm ${mobileLinkColor} hover:text-gold transition-colors duration-300 py-2`}
+              onClick={() => setIsOpen(false)}
             >
               {t.contact}
             </a>
